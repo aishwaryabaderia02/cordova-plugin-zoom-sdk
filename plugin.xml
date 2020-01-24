@@ -37,8 +37,16 @@
       </feature>
     </config-file>
     
-    <config-file parent="/*" target="AndroidManifest.xml"/>
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET" />
+    </config-file> 
     
+    <source-file src="src/android/ZoomAuthentication.java" target-dir="src/com/facetec/cordova/ZoomAuthentication"/>
+    <source-file src="src/android/AuthenticateProcessor.java" target-dir="src/com/facetec/cordova/AuthenticateProcessor"/>
+    <source-file src="src/android/ZoomAuthentication.java" target-dir="src/com/facetec/cordova/ZoomAuthentication"/>
+    <source-file src="src/android/ZoomAuthentication.java" target-dir="src/com/facetec/cordova/ZoomAuthentication"/>
+    <source-file src="src/android/ZoomAuthentication.java" target-dir="src/com/facetec/cordova/ZoomAuthentication"/>
+    <source-file src="src/android/ZoomAuthentication.java" target-dir="src/com/facetec/cordova/ZoomAuthentication"/>
     <source-file src="src/android/ZoomAuthentication.java" target-dir="src/com/facetec/cordova/ZoomAuthentication"/>
     <framework src="src/android/ZoomAuthentication.gradle" custom="true" type="gradleReference" />
 
