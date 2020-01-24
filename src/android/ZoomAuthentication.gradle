@@ -1,10 +1,8 @@
-repositories{    
+repositories{ 
+  google()   
   jcenter()
   flatDir {
     dirs 'libs'
-  }
-  maven {
-    url 'http://maven.facetec.com'
   }
 }
 
