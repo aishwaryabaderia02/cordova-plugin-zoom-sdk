@@ -1,11 +1,12 @@
-package ZoomProcessors;
+package com.facetec.cordova;
 
 import com.facetec.zoom.sampleapp.BuildConfig;
 import com.facetec.zoom.sdk.ZoomCustomization;
 
 public class ZoomGlobalState {
     // Replace string below with your license key from https://dev.zoomlogin.com/zoomsdk/#/account
-    public static String DeviceLicenseKeyIdentifier = BuildConfig.ZOOM_LICENSE_KEY_IDENTIFIER;
+    public static String DeviceLicenseKeyIdentifier = "diWgE1ZEpqrNF4GcshBYSvjWc2G6fQ6H";
+    // BuildConfig.ZOOM_LICENSE_KEY_IDENTIFIER"";
 
     // "https://api.zoomauth.com/api/v2/biometrics" for FaceTec Managed Testing API.
     // "http://localhost:8080" if running ZoOm Server SDK (Dockerized) locally.
