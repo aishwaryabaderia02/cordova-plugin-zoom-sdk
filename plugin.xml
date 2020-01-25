@@ -1,34 +1,13 @@
 
 
 <?xml version="1.0" encoding="utf-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.facetec.cordova.ZoomAuthentication" version="6.1.8">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" 
+ id="com.facetec.cordova.ZoomAuthentication" version="6.1.8">
   
   <name>ZoomAuthentication</name>
   <js-module name="ZoomAuthentication" src="www/ZoomAuthentication.js">
     <clobbers target="ZoomAuthentication"/>
   </js-module>
-
-  <!-- Tell iOS applications to embed the required Swift libraries  -->
-  <dependency id="cordova-plugin-add-swift-support" version="1.7.1"/>
-  
-  <platform name="ios">
-    <config-file parent="/*" target="config.xml">
-      <feature name="ZoomAuthentication">
-          <param name="ios-package" value="ZoomAuthentication"/>
-      </feature>
-    </config-file>
-    
-    <preference name="CAMERA_USAGE_DESCRIPTION" default="Secure Authentication with ZoOm" />
-    <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
-      <string>$CAMERA_USAGE_DESCRIPTION</string>
-    </config-file>
-
-    <hook type="before_plugin_install" src="hooks/hook-unzip-framework.js"/>
-
-    <source-file src="src/ios/ZoomAuthentication.m"/>
-    
-    <framework src="ZoomAuthentication.framework" custom="true" embed="true" />
-  </platform>
   
   <platform name="android">
     <config-file parent="/*" target="res/xml/config.xml">
@@ -38,7 +17,10 @@
     </config-file>
     
     <config-file target="AndroidManifest.xml" parent="/manifest">
-            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     </config-file> 
     
     <source-file src="src/android/AuthenticateProcessor.java" target-dir="src/com/facetec/cordova/AuthenticateProcessor"/>
