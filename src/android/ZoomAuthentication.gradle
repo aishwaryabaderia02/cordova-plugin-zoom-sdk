@@ -6,12 +6,6 @@ repositories{
     dirs 'aar'    
   }
 }
-  
-debug {
-    initWith debug
-    debuggable true
-    jniDebuggable true
-}
 
 dependencies {
   // compile(name:'zoom-authentication-8.1.1', ext:'aar')
