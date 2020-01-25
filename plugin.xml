@@ -14,8 +14,6 @@
       <feature name="ZoomAuthentication">
           <param name="android-package" value="com.facetec.cordova.ZoomAuthentication"/>
       </feature>
-      <framework src="build-proguard.gradle" custom="true" type="gradleReference" />
-      <resource-file src="proguard-custom.txt" target="proguard-custom.txt"/>
     </config-file>
     
     <config-file target="AndroidManifest.xml" parent="/manifest">
