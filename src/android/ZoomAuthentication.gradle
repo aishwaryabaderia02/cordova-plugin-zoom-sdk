@@ -6,11 +6,32 @@ repositories{
     dirs 'aar'    
   }
 }
-debug {
-    initWith debug
-    debuggable true
-    jniDebuggable true
+
+if (project.hasProperty("zoom_keystore")) {
+    signingConfigs {
+        release {
+            storeFile file(zoom_keystore)
+            storePassword zoom_keystore_password
+            keyAlias zoom_key_alias
+            keyPassword zoom_key_password
+        }
+    }
 }
+buildTypes {
+        release {
+            minifyEnabled false
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            if (signingConfigs.hasProperty('release')) {
+                signingConfig signingConfigs.release
+            }
+        }
+        debug {
+            initWith debug
+            debuggable true
+            jniDebuggable true
+        }
+    }
 dependencies {
   compile(name:'zoom-authentication-8.1.1', ext:'aar')
   compile 'com.android.support:appcompat-v7:25.3.1'
