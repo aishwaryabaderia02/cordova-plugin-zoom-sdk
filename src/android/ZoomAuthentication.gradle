@@ -1,17 +1,13 @@
-buildscript{
-  repositories{  
-    flatDir {
-      dirs 'aar'    
-    }
+apply plugin: 'com.android.application'
+repositories{ 
+  google()   
+  maven { url "https://maven.google.com" }
+  jcenter()  
+  flatDir {
+    dirs 'aar'    
+  }
 }
 
-  jcenter() 
-  maven {
-      url "https://maven.google.com/" 
-      name 'Google'
-      }
-      google()
-}
 // if (project.hasProperty("zoom_keystore")) {
 //     signingConfigs {
 //         release {
@@ -24,49 +20,34 @@ buildscript{
 // }
 
 dependencies {
-  classpath 'com.android.tools.build:gradle:3.1.+'  
-}
-apply plugin: 'com.android.library'
-
-def DEFAULT_COMPILE_SDK_VERSION             = 27
-def DEFAULT_BUILD_TOOLS_VERSION             = "27.0.3"
-def DEFAULT_TARGET_SDK_VERSION              = 26
-def DEFAULT_SUPPORT_LIBRARY_VERSION         = "27.1.0"
-
-android {
-    compileSdkVersion rootProject.hasProperty('compileSdkVersion') ? rootProject.compileSdkVersion : DEFAULT_COMPILE_SDK_VERSION
-    buildToolsVersion rootProject.hasProperty('buildToolsVersion') ? rootProject.buildToolsVersion : DEFAULT_BUILD_TOOLS_VERSION
-
-    defaultConfig {
-        minSdkVersion 18
-        targetSdkVersion rootProject.hasProperty('targetSdkVersion') ? rootProject.targetSdkVersion : DEFAULT_TARGET_SDK_VERSION
-        versionCode 1
-        versionName "1.0"
-    }
-    lintOptions {
-        abortOnError false
-    }
-
-    packagingOptions {
-       exclude 'META-INF/NOTICE'
-       exclude 'META-INF/LICENSE'
-   }
-}
-
-repositories {
-    maven {
-        url 'http://maven.facetec.com'
-    }
-    mavenCentral()
-    google()
-}
-dependencies{
-  implementation files('zoom-authentication-8.1.1.aar')
+  compile(name:'zoom-authentication-8.1.1', ext:'aar')
   compile 'com.android.support:appcompat-v7:25.3.1'
   implementation 'com.squareup.okhttp3:okhttp:3.10.0'
   implementation 'com.squareup.okio:okio:1.15.0'
-  //implementation fileTree(include: ['*.jar'], dir: 'libs')  
+  implementation fileTree(include: ['*.jar'], dir: 'libs')  
   testImplementation 'junit:junit:4.12'
   implementation 'androidx.appcompat:appcompat:1.0.2'
   implementation 'com.google.code.gson:gson:2.8.5' 
+}
+
+android {
+  packagingOptions {
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/LICENSE'
+  }
+  // buildTypes {
+  //       release {
+  //           minifyEnabled false
+  //           useProguard false
+  //           proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+  //           if (signingConfigs.hasProperty('release')) {
+  //               signingConfig signingConfigs.release
+  //           }
+  //       }
+  //       debug {
+  //           initWith debug
+  //           debuggable true
+  //           jniDebuggable true
+  //       }
+  //   }
 }
