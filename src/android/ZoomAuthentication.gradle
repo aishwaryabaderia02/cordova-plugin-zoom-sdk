@@ -1,9 +1,7 @@
-buildscript{
-  repositories{  
+repositories{  
     flatDir {
       dirs 'aar'    
     }
-}
 
   jcenter() 
   maven {
@@ -11,17 +9,12 @@ buildscript{
       name 'Google'
       }
       google()
+  maven {
+        url 'http://maven.facetec.com'
+    }
+    mavenCentral()
+    google()
 }
-// if (project.hasProperty("zoom_keystore")) {
-//     signingConfigs {
-//         release {
-//             storeFile file(zoom_keystore)
-//             storePassword zoom_keystore_password
-//             keyAlias zoom_key_alias
-//             keyPassword zoom_key_password
-//         }
-//     }
-// }
 
 dependencies {
   classpath 'com.android.tools.build:gradle:3.1.+'  
@@ -53,13 +46,6 @@ android {
    }
 }
 
-repositories {
-    maven {
-        url 'http://maven.facetec.com'
-    }
-    mavenCentral()
-    google()
-}
 dependencies{
   implementation files('zoom-authentication-8.1.1.aar')
   compile 'com.android.support:appcompat-v7:25.3.1'
