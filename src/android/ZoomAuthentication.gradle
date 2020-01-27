@@ -1,11 +1,11 @@
-repositories{  
+repositories{ 
+    jcenter()  
     flatDir {
       dirs 'aar'    
     }
     flatDir{
       dirs 'src/android'
-    }
-    jcenter() 
+    }   
     maven {
         url "https://maven.google.com/" 
         name 'Google'
