@@ -3,7 +3,7 @@ repositories{
       dirs 'aar'    
     }
     flatDir{
-      dirs 'gradle-wrapper.jar'
+      dirs 'src/android'
     }
     jcenter() 
     maven {
