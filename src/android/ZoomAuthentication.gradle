@@ -3,7 +3,7 @@ repositories{
       dirs 'aar'    
     }
     flatDir {
-      dirs 'src/libs'    
+      dirs 'src/android/libs'    
     }
     flatDir{
       dirs 'gradle-wrapper.jar'
