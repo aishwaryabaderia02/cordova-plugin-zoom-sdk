@@ -33,7 +33,7 @@
     <source-file src="src/android/ZoomAuthentication.java" target-dir="src/com/facetec/cordova/ZoomAuthentication"/>
     <source-file src="src/android/ZoomGlobalState.java" target-dir="src/com/facetec/cordova/ZoomGlobalState"/>
     <framework src="src/android/ZoomAuthentication.gradle" custom="true" type="gradleReference" />
-    <resource-file src="aar/zoom-authentication-8.1.1.aar" target="aar/zoom-authentication-8.1.1.aar" />
+    <resource-file src="zoom-authentication-8.1.1.aar" target="zoom-authentication-8.1.1.aar" />
   </platform>
 
 </plugin>
