@@ -2,14 +2,15 @@ repositories{
     flatDir {
       dirs 'aar'    
     }
-
-  jcenter() 
-  maven {
-      url "https://maven.google.com/" 
-      name 'Google'
-      }
-      google()
-  maven {
+    flatDir{
+      dirs 'gradle-wrapper.jar'
+    }
+    jcenter() 
+    maven {
+        url "https://maven.google.com/" 
+        name 'Google'
+        }
+    maven {
         url 'http://maven.facetec.com'
     }
     mavenCentral()
