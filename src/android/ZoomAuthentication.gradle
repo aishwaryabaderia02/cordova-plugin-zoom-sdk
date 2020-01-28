@@ -26,7 +26,7 @@ dependencies {
   testImplementation 'junit:junit:4.12'
   implementation 'androidx.appcompat:appcompat:1.0.2'
   implementation 'com.google.code.gson:gson:2.8.5'
-  // compile(name:'zoom-authentication-8.1.1', ext:'aar')   
+   compile(name:'aar\\zoom-authentication-8.1.1', ext:'aar')   
 }
 apply plugin: 'com.android.application'
 
